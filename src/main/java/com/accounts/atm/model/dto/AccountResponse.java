@@ -1,9 +1,12 @@
 package com.accounts.atm.model.dto;
 
 import io.swagger.annotations.ApiModel;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
-import javax.persistence.Column;
 
 @ApiModel("AccountResponse")
 @Getter
@@ -13,7 +16,7 @@ import javax.persistence.Column;
 @ToString
 public class AccountResponse {
 
-    private Double amount;
-    private String accountNumber;
+  private String accountNumber;
+  private Double amount;
 
 }
