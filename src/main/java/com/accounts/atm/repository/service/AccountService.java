@@ -32,7 +32,7 @@ public class AccountService implements IAccountService {
         BeanUtils.copyProperties(cardResponse, account);
         responses.add(cardResponse);
       }
-      responses.forEach(p -> p.setAccountNumber(p.getAccountNumber().concat("xxxx")));
+      responses.forEach(p -> p.setAccountNumber(p.getAccountNumber().concat("XXXX")));
       return response;
     }).subscribeOn(Schedulers.io());
   }
