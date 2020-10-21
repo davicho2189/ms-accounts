@@ -1,13 +1,7 @@
-insert into account(id,card_number,account_number,amount) values (1 ,'5124098246521472','57036064256095',1228);
-insert into account(id,card_number,account_number,amount) values (2 ,'5124098246521473','57036061234095',125);
-insert into account(id,card_number,account_number,amount) values (3 ,'5124098246521474','57036064234235',725);
-insert into account(id,card_number,account_number,amount) values (4 ,'5124054242541125','57036064234429',7551);
-insert into account(id,card_number,account_number,amount) values (5 ,'5124054242541126','57036061234324',1457);
-insert into account(id,card_number,account_number,amount) values (6 ,'5124054242541127','57036064257452',1250);
-insert into account(id,card_number,account_number,amount) values (7 ,'5124054242541128','57036064125312',4578);
-insert into account(id,card_number,account_number,amount) values (8 ,'5124498242565217','57036065454514',1250);
-insert into account(id,card_number,account_number,amount) values (9 ,'5124098651747251','57036064952328',7817);
-insert into account(id,card_number,account_number,amount) values (10,'5124098158543068','57036068412325',1245);
-insert into account(id,card_number,account_number,amount) values (11,'5124098263574257','57036064542125',458);
-insert into account(id,card_number,account_number,amount) values (12,'5124098248547142','57036069821478',18);
-insert into account(id,card_number,account_number,amount) values (13,'5124098249521475','57036064295214',12);
+insert into account(id,card_number,account_number,amount) values (1 ,'1111222233334441','1111222233334441XX',1000);
+insert into account(id,card_number,account_number,amount) values (2 ,'1111222233334442','1111222233334442XX',500);
+insert into account(id,card_number,account_number,amount) values (3 ,'1111222233334443','1111222233334443XX',1500);
+insert into account(id,card_number,account_number,amount) values (4 ,'1111222233334444','1111222233334444XX',2000);
+insert into account(id,card_number,account_number,amount) values (5 ,'1111222233334445','1111222233334445XX',500);
+insert into account(id,card_number,account_number,amount) values (6 ,'1111222233334446','1111222233334446XX',2500);
+

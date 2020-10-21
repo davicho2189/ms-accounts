@@ -6,5 +6,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface AccountDao extends JpaRepository<Account, Long> {
 
-  List<Account> findByCardNumber(String dni);
+  Account findByCardNumber(String dni);
 }

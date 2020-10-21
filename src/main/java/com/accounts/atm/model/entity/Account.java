@@ -11,8 +11,6 @@ import javax.persistence.Table;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
-
 @ApiModel("Account")
 @Data
 @NoArgsConstructor

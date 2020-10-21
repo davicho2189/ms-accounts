@@ -3,6 +3,7 @@ package com.accounts.atm.controller;
 import com.accounts.atm.model.dto.AccountResponse;
 import com.accounts.atm.repository.service.IAccountService;
 import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -27,10 +28,14 @@ public class AccountController {
   @ApiResponses(value = { @ApiResponse(code = 200, message = "Success OK"),
       @ApiResponse(code = 404, message = "No se tarjetas") })
   @GetMapping("/accounts/{cardNumber}")
-  public Single<List<AccountResponse>> 
+  public Single<AccountResponse>
       getAccounts(@PathVariable String cardNumber) 
       throws Exception {
-    return accountService.findByDocument(cardNumber);
+
+    return accountService.findByDocument(cardNumber).map(response -> {
+      Thread.sleep(5000);
+      return response;
+    });
   }
 
 }

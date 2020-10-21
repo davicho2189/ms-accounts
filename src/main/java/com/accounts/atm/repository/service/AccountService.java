@@ -1,16 +1,18 @@
 package com.accounts.atm.repository.service;
 
-import com.accounts.atm.model.dto.AccountResponse;
-import com.accounts.atm.model.entity.Account;
-import com.accounts.atm.repository.dao.AccountDao;
-import io.reactivex.Single;
-import io.reactivex.schedulers.Schedulers;
-import java.util.ArrayList;
-import java.util.List;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.accounts.atm.model.dto.AccountResponse;
+import com.accounts.atm.model.entity.Account;
+import com.accounts.atm.repository.dao.AccountDao;
+
+import io.reactivex.Single;
+import io.reactivex.schedulers.Schedulers;
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 @Service
 public class AccountService implements IAccountService {
 
@@ -18,22 +20,17 @@ public class AccountService implements IAccountService {
   private AccountDao accountDao;
 
   @Override
-  public Single<List<AccountResponse>> findByDocument(String document) throws Exception {
+  public Single<AccountResponse> findByDocument(String document) throws Exception {
 
-    List<Account> accounts = accountDao.findByCardNumber(document);
+    Account account = accountDao.findByCardNumber(document);
+    log.info("ola" + account.toString());
+    AccountResponse accountResponse = new AccountResponse();
+    BeanUtils.copyProperties(accountResponse, account);
 
-    List<AccountResponse> responses = new ArrayList<>();
-
-    // Thread.sleep(5000); return responses
-    return Single.just(responses).map(response -> {
-      Thread.sleep(5000);
-      for (Account account : accounts) {
-        AccountResponse cardResponse = new AccountResponse();
-        BeanUtils.copyProperties(cardResponse, account);
-        responses.add(cardResponse);
-      }
-      responses.forEach(p -> p.setAccountNumber(p.getAccountNumber().concat("XXXX")));
-      return response;
+    return Single.just(accountResponse).map(response -> {
+     // Thread.sleep(5000);
+      return accountResponse;
     }).subscribeOn(Schedulers.io());
   }
+
 }
