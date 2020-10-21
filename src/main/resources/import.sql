@@ -4,4 +4,3 @@ insert into account(id,card_number,account_number,amount) values (3 ,'1111222233
 insert into account(id,card_number,account_number,amount) values (4 ,'1111222233334444','1111222233334444XX',2000);
 insert into account(id,card_number,account_number,amount) values (5 ,'1111222233334445','1111222233334445XX',500);
 insert into account(id,card_number,account_number,amount) values (6 ,'1111222233334446','1111222233334446XX',2500);
-
