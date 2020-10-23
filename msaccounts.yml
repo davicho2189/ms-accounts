@@ -1,0 +1,42 @@
+#Definir pod
+apiVersion: apps/v1
+kind: deployment
+metadata:
+  name: msaccounts
+  labels:
+    app: msaccounts
+  spec:
+    replicas: 1
+    selector:
+      matchLabels:
+        app: msaccounts
+        template:
+        metadata:
+        labels:
+          app: msaccounts
+          spec:
+          containers:
+          name: msaccounts
+          image: 123
+
+          resources:
+          requests:
+          memory: "256Mi"
+          cpu: "250m"
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+    imagePullSecrets:
+      name: regcred
+      ##################
+    kind :  Service
+    apiVersion: v1   
+    metadata:
+      name: msaccounts
+    spec:
+      selector:
+        app: msaccounts
+      ports:
+      - port: 80
+        targetPort: 9001
+    
